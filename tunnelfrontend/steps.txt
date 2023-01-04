@@ -1,0 +1,45 @@
+First step install react
+npx creat-next-app@latest ./ --ts
+
+Second install sanity backend
+#npm install -g @sanity/cli
+#sanity init
+
+package.json file for tunnel(backup)not real
+{
+  "name": "tunnel",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Bruce Lancer01 <zwekhantko2019@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.30.4",
+    "@sanity/core": "^2.30.3",
+    "@sanity/default-layout": "^2.30.4",
+    "@sanity/default-login": "^2.30.4",
+    "@sanity/desk-tool": "^2.30.4",
+    "@sanity/eslint-config-studio": "^2.0.0",
+    "@sanity/vision": "^2.30.4",
+    "eslint": "^8.6.0",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {}
+}
+
+for depency
+#npm install --legacy-peer-deps
+
+run next.js
+#npm run dev
