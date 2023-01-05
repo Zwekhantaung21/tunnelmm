@@ -29,10 +29,10 @@ export const getServerSideProps = async ({
 }: {
   query: { topic: string };
 }) => {
-  let response = await axios.get(`http://localhost:3000/api/post`);
+  let response = await axios.get(`https://tunnelmm.vercel.app/api/post`);
 
   if(topic) {
-    response = await axios.get(`http://localhost:3000/api/discover/${topic}`);
+    response = await axios.get(`https://tunnelmm.vercel.app/api/discover/${topic}`);
   }
   
   return {

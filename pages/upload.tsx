@@ -72,7 +72,7 @@ const Upload = () => {
         topic,
       };
 
-      await axios.post(`http://localhost:3000/api/post`, doc);
+      await axios.post(`https://tunnelmm.vercel.app/api/post`, doc);
         
       router.push('/');
     }

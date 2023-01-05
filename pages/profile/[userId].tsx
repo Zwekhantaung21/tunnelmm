@@ -159,7 +159,7 @@ export const getServerSideProps = async ({
 }: {
   params: { userId: string };
 }) => {
-  const res = await axios.get(`http://localhost:3000/api/profile/${userId}`);
+  const res = await axios.get(`https://tunnelmm.vercel.app/api/profile/${userId}`);
 
   return {
     props: { data: res.data },
