@@ -53,6 +53,7 @@ import { topics } from '../utils/constants';
           <Link href={`/detail/${_id}`}>
             <video
               loop
+              autoPlay
               playsInline
               src={video.asset.url}
               className='w-[250px] md:w-full rounded-xl cursor-pointer'
@@ -127,6 +128,7 @@ import { topics } from '../utils/constants';
             <Link href={`/detail/${_id}`}>
               <video
                 loop
+                autoPlay
                 playsInline
                 ref={videoRef}
                 src={video.asset.url}
