@@ -46,7 +46,7 @@ import { topics } from '../utils/constants';
       return (
         <div>
           <Link href={`/detail/${_id}`}>
-            <p className='mt-2 text-lg text-black-800 mb-3 cursor-pointer w-210'>
+            <p className='mt-2 text-lg text-black-800 mb-3 cursor-pointer '>
               {caption}
             </p>
           </Link>
@@ -110,7 +110,7 @@ import { topics } from '../utils/constants';
                 
                 
               </Link> */}
-              <p className='mt-2 mr-5 text-lg font-semibold'>{caption}</p>
+              <p className='mt-2 mr-5 text-lg font-normal'>{caption}</p>
               {/* <span className="cursor-pointer bg-gray-100 text-gray-800 text-xs mt-2 font-semibold md:ml-10 px-1 py-1 rounded dark:bg-gray-700 text-blue-500">
              
               </span> */}
@@ -126,9 +126,12 @@ import { topics } from '../utils/constants';
             <Link href={`/detail/${_id}`}>
               <video
                 loop
+                preload=''
+                
+                playsInline
                 ref={videoRef}
                 src={video.asset.url}
-                className='lg:w-[600px]  h-[150px] md:h-[400px] lg:h-[368px] w-[270px] rounded-2xl cursor-pointer '
+                className='lg:w-[600px]  h-[150px] md:h-[400px] lg:h-[368px] w-[270px] rounded-3xl cursor-pointer '
               ></video>
             </Link>
 
@@ -167,13 +170,13 @@ import { topics } from '../utils/constants';
         <div className='mt-2 lg:mt-0 md:text-2xl text-lg'>
           <div className='flex ml-0 '>
           <AiOutlineStar className='cursor-pointer md:ml-40'/>
-          <p className='text-xs'>1.1k</p>
+          <p className='text-xs mt-1'> {likes?.length || 0}</p>
           <AiOutlineHeart className='cursor-pointer md:ml-20 ml-6'/>
-          <p className='text-xs'>101k</p>
+          <p className='text-xs mt-1'>101k</p>
           <BiPaperPlane className='cursor-pointer md:ml-20 ml-7'/>
-          <p className='text-xs'>1k</p>
+          <p className='text-xs mt-1'>1k</p>
           <AiOutlineShareAlt className='cursor-pointer md:ml-20 ml-8'/>
-          <p className='text-xs'>101</p>
+          <p className='text-xs mt-1'>101</p>
           </div>
         </div>
       </div>

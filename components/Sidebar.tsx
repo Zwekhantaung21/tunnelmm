@@ -77,7 +77,7 @@ const Sidebar: NextPage = () => {
                 </p>
                 
                 <span className='capitalize text-xl ml-2 xl:block'>
-                  Tunneling
+                  Tunnelling
                 </span></div>
               </div>
               
