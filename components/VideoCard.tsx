@@ -127,7 +127,7 @@ import { topics } from '../utils/constants';
               <video
                 loop
                 preload=''
-                autoPlay
+                
                 playsInline
                 ref={videoRef}
                 src={video.asset.url}

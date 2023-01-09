@@ -5,6 +5,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import '../styles/globals.css';
+import Topbutton from "../components/scroll";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isSSR, setIsSSR] = useState(true);
@@ -14,6 +15,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, []);  
 
   if (isSSR) return null;
+  
+
+ 
+
 
   return (
     <GoogleOAuthProvider clientId='264290868593-dmul9pko0nu30e786o4mgtiq9uhnj1t1.apps.googleusercontent.com'>
@@ -26,8 +31,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           </div>
           <div className='mt-4 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1'>
             <Component {...pageProps} />
+            <Topbutton/>
+
           </div>
         </div>
+        
       </div>
     </GoogleOAuthProvider>
   );

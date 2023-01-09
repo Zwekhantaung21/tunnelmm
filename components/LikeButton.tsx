@@ -3,7 +3,9 @@ import { MdFavorite } from 'react-icons/md';
 import { NextPage } from 'next';
 
 import useAuthStore from '../store/authStore';
-import { GiDrippingStar, GiFallingStar } from 'react-icons/gi';
+// import { AiOutlineStar, GiFallingStar } from 'react-icons/gi';
+import { BsStar } from 'react-icons/bs';
+import { AiFillStar } from 'react-icons/ai';
 
 interface IProps {
   likes: any;
@@ -30,11 +32,11 @@ const LikeButton: NextPage<IProps> = ({ likes, flex, handleLike, handleDislike }
       <div className='mt-4 flex flex-col justify-center items-center cursor-pointer'>
         {alreadyLiked ? (
           <div className='bg-primary rounded-full p-2 md:p-4 text-[#006ee6] ' onClick={handleDislike} >
-            <GiDrippingStar className='text-lg md:text-2xl' />
+            <AiFillStar className='text-lg md:text-2xl' />
           </div>
         ) : (
           <div className='bg-primary rounded-full p-2 md:p-4 ' onClick={handleLike} >
-            <GiFallingStar className='text-lg md:text-2xl' />
+            <AiFillStar className='text-lg md:text-2xl' />
           </div>
         )}
         <p className='text-md font-semibold '>{likes?.length || 0}</p>
