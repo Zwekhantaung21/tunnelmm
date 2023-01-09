@@ -24,11 +24,11 @@ function Topbutton() {
         {backToTopButton && (
             <button style={{
                 position: "fixed",
-                bottom: "100px",
-                right:"100px",
-                height: "100px",
-                width: "100px",
-                fontsize:"100px",
+                bottom: "500px",
+                right:"500px",
+                height: "500px",
+                width: "500px",
+                fontsize:"500px",
 
             }}
             onClick={scrollUp}
