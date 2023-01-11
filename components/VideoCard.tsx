@@ -4,14 +4,14 @@
   import Link from 'next/link';
   import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
   import { BsFillPlayFill, BsFillPauseFill, BsHeart } from 'react-icons/bs';
-  import { GoVerified } from 'react-icons/go';
+  import { GoLinkExternal, GoVerified } from 'react-icons/go';
   import { BsPlay } from 'react-icons/bs';
   // import {Detail} from '../pages/detail/id'
   import { Video } from './../types';
 import { AiOutlineHeart, AiOutlineShareAlt, AiOutlineStar } from 'react-icons/ai';
 import { BiPaperPlane } from 'react-icons/bi';
 import { GiDrippingStar } from 'react-icons/gi';
-import { topics } from '../utils/constants';
+
 
 
 
@@ -20,7 +20,7 @@ import { topics } from '../utils/constants';
     isShowingOnHome?: boolean;
   }
 
-  const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes }, isShowingOnHome }) => {
+  const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes, comments }, isShowingOnHome }) => {
     const [playing, setPlaying] = useState(false);
     const [isHover, setIsHover] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
@@ -124,33 +124,39 @@ import { topics } from '../utils/constants';
             className='rounded-3xl lg:rounded'
           >
             <Link href={`/detail/${_id}`}>
+            <span className='float-right cursor-pointer text-sm flex text-blue-600'>Detail&nbsp;
+            <GoLinkExternal className='mt-1'/> </span>
+            </Link>
+            <br className='block'/>
               <video
                 loop
-                preload=''
-                autoPlay
+                controls
+                
+                muted
                 playsInline
                 ref={videoRef}
                 src={video.asset.url}
-                className='lg:w-[600px]  h-[150px] md:h-[400px] lg:h-[368px] w-[270px] rounded-3xl cursor-pointer '
+                // className='lg:w-[610px]  h-[150px] md:h-[400px] lg:h-[368px] w-[270px] rounded-3xl '
+                className=' w-[300px] xl:w-[800px] rounded-3xl mb-2'
               ></video>
-            </Link>
+            
 
             {isHover && (
               <div className='absolute bottom-0 md:bottom-5 cursor-pointer left-0 md:left-14 lg:left-0 flex gap-40 lg:justify-between w-[100px] md:w-[50px] lg:w-[600px] p-3'>
-                {playing ? (
+                {/* {playing ? (
                   <div className='absolute bottom-[80%] left-[110%] lg:left-[42%] lg:bottom-[210%] cursor-pointer'>
                   <button onClick={onVideoPress}>
                     <BsFillPauseFill className='text-blue-600  text-5xl lg:text-7xl ' />
                   </button>
                   </div>
                 ) : (
-                  <div className='absolute bottom-[80%] left-[110%] lg:left-[42%] lg:bottom-[210%] cursor-pointer'>
+                  <div className='absolute bottom-[80%] left-[120%] lg:left-[42%] lg:bottom-[210%] cursor-pointer'>
                   <button onClick={onVideoPress}>
                     <BsFillPlayFill className='text-blue-600  text-5xl lg:text-7xl' />
                   </button>
                   </div>
-                )}
-                {isVideoMuted ? (
+                )} */}
+                {/* {isVideoMuted ? (
                   <div>
                   <button onClick={() => setIsVideoMuted(false)}>
                     <HiVolumeOff className='text-blue-600 text-2xl lg:text-1xl' />
@@ -162,21 +168,21 @@ import { topics } from '../utils/constants';
                     <HiVolumeUp className='text-blue-600 text-2xl lg:text-2xl' />
                   </button>
                   </div>
-                )}
+                )} */}
               </div>
             )}
           </div>
         </div>
-        <div className='mt-2 lg:mt-0 md:text-2xl text-lg'>
+        <div className='mt-2 lg:mt-0 md:text-3xl text-2xl'>
           <div className='flex ml-0 '>
           <AiOutlineStar className='cursor-pointer md:ml-40'/>
           <p className='text-xs mt-1'> {likes?.length || 0}</p>
-          <AiOutlineHeart className='cursor-pointer md:ml-20 ml-6'/>
-          <p className='text-xs mt-1'>101k</p>
-          <BiPaperPlane className='cursor-pointer md:ml-20 ml-7'/>
-          <p className='text-xs mt-1'>1k</p>
-          <AiOutlineShareAlt className='cursor-pointer md:ml-20 ml-8'/>
-          <p className='text-xs mt-1'>101</p>
+          <BiPaperPlane className='cursor-pointer md:ml-40 ml-20'/>
+          <p className='text-xs mt-1'> {comments?.length || 0}</p>
+          {/* <AiOutlineHeart className='cursor-pointer md:ml-20 ml-7'/>
+          <p className='text-xs mt-1'>1k</p> */}
+          <AiOutlineShareAlt className='cursor-pointer md:ml-40 ml-20'/>
+          <p className='text-xs mt-1'>0</p>
           </div>
         </div>
       </div>
