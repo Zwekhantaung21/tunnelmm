@@ -24,15 +24,17 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <GoogleOAuthProvider clientId='264290868593-dmul9pko0nu30e786o4mgtiq9uhnj1t1.apps.googleusercontent.com'>
       
-      <div className='xl:w-[1200px] m-auto overflow-hidden h-[100vh]'>
+      <div className='xl:w-[1400px] m-auto overflow-hidden h-[100vh]'>
         <Navbar />
         <div className='flex gap-6 md:gap-20 '>
           <div className='h-[92vh] overflow-auto xl:overflow-hidden xl:hover:overflow-auto'>
             <Sidebar />
           </div>
-          <div className='mt-4 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1'>
+          
+          <div className='mt-4 mr-4 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1'>
+            <div className='scroll'>
             <Component {...pageProps} />
-
+            <Topbutton/>
 
             {/* <div data-dial-init className="fixed bottom-6 right-24 group">
             <Link href='/upload'>    
@@ -43,9 +45,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     </Link>
 </div> */}
 
+          </div>
 
-
-            <Topbutton/>
+            
 
           </div>
         </div>

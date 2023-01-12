@@ -105,7 +105,7 @@ import { GiDrippingStar } from 'react-icons/gi';
             </div>
             
           </div>
-          <div className='md:ml-10'>
+          <div className='md:ml-10 w-[auto]'>
               {/* <Link href={`/detail/${_id}`}>
                 
                 
@@ -131,13 +131,13 @@ import { GiDrippingStar } from 'react-icons/gi';
               <video
                 loop
                 controls
+                preload='auto'
                 
-                muted
                 playsInline
                 ref={videoRef}
                 src={video.asset.url}
                 // className='lg:w-[610px]  h-[150px] md:h-[400px] lg:h-[368px] w-[270px] rounded-3xl '
-                className=' w-[300px] xl:w-[800px] rounded-3xl mb-2'
+                className=' w-[300px] xl:w-[700px] rounded-3xl mb-2'
               ></video>
             
 

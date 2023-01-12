@@ -20,15 +20,19 @@ export const topics = [
    
   },
   {
+    name: 'song',
+   
+  },
+  {
     name: 'dance',
    
   },
   {
-    name: 'beauty',
+    name: 'movie',
    
   },
   {
-    name: 'animals',
+    name: 'pets',
    
   },
   {
