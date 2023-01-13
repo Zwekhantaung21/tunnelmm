@@ -132,7 +132,7 @@ import { GiDrippingStar } from 'react-icons/gi';
                 muted
                 controls={true}
                 preload='auto'
-                autoPlay
+                
                 playsInline
                 ref={videoRef}
                 src={video.asset.url}
