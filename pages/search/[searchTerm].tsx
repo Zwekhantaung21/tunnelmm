@@ -23,8 +23,8 @@ const Search = ({ videos }: { videos: Video[] }) => {
   const searchedAccounts = allUsers?.filter((user: IUser) => user.userName.toLowerCase().includes(searchTerm));
   
   return (
-    <div className='w-full  '>
-      <div className='flex gap-10 mb-10 border-b-2 border-gray-200 md:fixed z-50 bg-white w-full'>
+    <div className='w-full mb-50 '>
+      <div className='flex gap-10 mb-10 border-b-2 border-gray-50 md:relative z-50 bg-white w-full'>
         <p onClick={() => setIsAccounts(true)} className={`text-xl  font-semibold cursor-pointer ${accounts} mt-2`}>
           Accounts
         </p>
@@ -33,16 +33,16 @@ const Search = ({ videos }: { videos: Video[] }) => {
         </p>
       </div>
       {isAccounts ? (
-        <div className='md:mt-16'>
+        <div className='md:mt-0'>
           {searchedAccounts.length > 0 ? (
             searchedAccounts.map((user: IUser, idx: number) => (
               <Link key={idx} href={`/profile/${user._id}`}>
-                <div className=' flex gap-3 p-2 cursor-pointer font-semibold rounded border-b-2 border-gray-200'>
+                <div className=' flex gap-3 cursor-pointer font-semibold rounded border-b-2 border-gray-100 '>
                   <div>
                     <Image width={50} height={50} className='rounded-full' alt='user-profile' src={user.image}/>
                   </div>
-                  <div>
-                    <div>
+                  <div className='mt-50'>
+                    <div >
                       <p className='flex gap-1 items-center text-lg font-bold text-primary'>
                         {user.userName} <GoVerified className='text-blue-400' />
                       </p>

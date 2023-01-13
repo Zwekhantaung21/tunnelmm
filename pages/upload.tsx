@@ -92,7 +92,7 @@ const Upload = () => {
           <div>
           <svg aria-hidden="true" className="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
             <p className='text-2xl font-bold'>Ready for tunneling?</p>
-            <p className='text-md text-gray-400 mt-1'>Let's do a tunnel video now!</p>
+            <p className='text-md text-gray-400 mt-1'>Let's create a tunnel video now!</p>
           </div>
           <div className=' border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center  outline-none mt-10 w-[260px] h-[458px] p-10 cursor-pointer hover:border-blue-300 hover:bg-gray-100'>
             {loading ? (
@@ -100,7 +100,7 @@ const Upload = () => {
                 <CircleLoader
   color="#006ee6"
   size={30}
-/>Uploading...
+/>Tunnelling...
               </p>
             ) : (
               <div>
@@ -117,7 +117,7 @@ const Upload = () => {
                       </div>
 
                       <p className='text-gray-400 text-center mt-10 text-sm leading-10'>
-                        MP4 or WebM or ogg <br />
+                        MP4,WebM and ogg <br />
                         720x1280 resolution or higher <br />
                         Up to 10 minutes <br />
                         Less than 2 GB
@@ -200,9 +200,10 @@ const Upload = () => {
               disabled={videoAsset?.url ? false : true}
               onClick={handlePost}
               type='button'
-              className='bg-[#006ee6] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none'
+              className='bg-[#006ee6] text-white text-md font-medium p-2 rounded w-28 cursor-pointer lg:w-44 outline-none'
             >
-              {savingPost ? 'Posting...' : 'Post'}
+              {savingPost ? 'Tunnelling...'  : 'Post'}
+       
             </button>
           </div>
         </div>

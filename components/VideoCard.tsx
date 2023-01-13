@@ -129,15 +129,15 @@ import { GiDrippingStar } from 'react-icons/gi';
             </Link>
             <br className='block'/>
               <video
-                loop
-                controls
+                muted
+                controls={true}
                 preload='auto'
-                
+                autoPlay
                 playsInline
                 ref={videoRef}
                 src={video.asset.url}
                 // className='lg:w-[610px]  h-[150px] md:h-[400px] lg:h-[368px] w-[270px] rounded-3xl '
-                className=' w-[300px] xl:w-[700px] rounded-3xl mb-2'
+                className=' w-[300px] xl:w-[600px] rounded-3xl mb-2'
               ></video>
             
 
@@ -173,16 +173,16 @@ import { GiDrippingStar } from 'react-icons/gi';
             )}
           </div>
         </div>
-        <div className='mt-2 lg:mt-0 md:text-3xl text-2xl'>
-          <div className='flex ml-0 '>
-          <AiOutlineStar className='cursor-pointer md:ml-40'/>
-          <p className='text-xs mt-1'> {likes?.length || 0}</p>
-          <BiPaperPlane className='cursor-pointer md:ml-40 ml-20'/>
-          <p className='text-xs mt-1'> {comments?.length || 0}</p>
-          {/* <AiOutlineHeart className='cursor-pointer md:ml-20 ml-7'/>
-          <p className='text-xs mt-1'>1k</p> */}
-          <AiOutlineShareAlt className='cursor-pointer md:ml-40 ml-20'/>
-          <p className='text-xs mt-1'>0</p>
+        <div className='mt-2  lg:mt-0 md:text-2xl text-2xl'>
+          <div className='flex  ml-0  '>
+          <AiOutlineStar className='cursor-pointer text-blue-400  md:ml-40'/>&nbsp;
+          <p className='text-xs text-gray-500 mt-1'> {likes?.length || 0}</p>
+
+          <BiPaperPlane className='cursor-pointer  text-blue-400 md:ml-40 ml-20'/>&nbsp;
+          <p className='text-xs text-gray-500 mt-1'> {comments?.length || 0}</p>
+
+          <AiOutlineShareAlt className='cursor-pointer text-blue-400 md:ml-40 ml-20'/>&nbsp;
+          <p className='text-xs text-gray-500 mt-1'>0</p>
           </div>
         </div>
       </div>
