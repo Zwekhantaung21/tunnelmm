@@ -100,12 +100,10 @@ const Navbar = () => {
           <div className='flex  md:gap-10'>
             <Link href='/upload'>
               {/* <button className='border-2 px-2 md:px-4 text-md font-semibold flex items-center md:mr-5 mr-10 gap-2'> */}
-              <button className="relative inline-flex items-center justify-center p-0.5 mb-1 mr-0 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+              <button className="relative inline-flex items-center justify-center p-0.5 mb-1 mr-0 overflow-hidden text-base font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-  Tunnel
-      <span className="inline-flex items-center justify-center w-5 h-4.5 ml-1 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full">
-      <span className='mb-1'>+</span>
-  </span>
+  tunnel 
+      <span className='text-blue-700  mt-1'>+</span>
   </span>
  
 </button>
