@@ -21,7 +21,7 @@ import { GiDrippingStar } from 'react-icons/gi';
   }
 
   const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes, comments }, isShowingOnHome }) => {
-    const [playing, setPlaying] = useState(false);
+    const [playing, setPlaying] = useState(true);
     const [isHover, setIsHover] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -132,7 +132,7 @@ import { GiDrippingStar } from 'react-icons/gi';
                 muted
                 controls={true}
                 preload='auto'
-                
+                autoPlay
                 playsInline
                 ref={videoRef}
                 src={video.asset.url}
