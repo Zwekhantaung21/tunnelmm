@@ -23,7 +23,7 @@ import { GiDrippingStar } from 'react-icons/gi';
   const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes, comments }, isShowingOnHome }) => {
     const [playing, setPlaying] = useState(true);
     const [isHover, setIsHover] = useState(false);
-    const [isVideoMuted, setIsVideoMuted] = useState(false);
+    const [isVideoMuted, setIsVideoMuted] = useState(true);
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const onVideoPress = () => {
