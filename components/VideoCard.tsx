@@ -6,22 +6,17 @@
   import { BsFillPlayFill, BsFillPauseFill, BsHeart } from 'react-icons/bs';
   import { GoLinkExternal, GoVerified } from 'react-icons/go';
   import { BsPlay } from 'react-icons/bs';
-  import Detail from '../pages/detail/[id]';
+  // import {Detail} from '../pages/detail/id'
   import { Video } from './../types';
 import { AiOutlineHeart, AiOutlineShareAlt, AiOutlineStar } from 'react-icons/ai';
 import { BiPaperPlane } from 'react-icons/bi';
 import { GiDrippingStar } from 'react-icons/gi';
-import LikeButton from './LikeButton';
-import useAuthStore from '../store/authStore';
-import axios from 'axios';
 
-import PostDetails from "../pages/detail/[id]";
 
 
   interface IProps {
     post: Video;
     isShowingOnHome?: boolean;
-    
   }
 
   const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes, comments }, isShowingOnHome }) => {
@@ -29,18 +24,6 @@ import PostDetails from "../pages/detail/[id]";
     const [isHover, setIsHover] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
-    const { userProfile }: any = useAuthStore();
-    const handleLike = async (like: boolean) => {
-      if (userProfile) {
-        const res = await axios.put(`https://tunnelmm.vercel.app/api/like`, {
-          userId: userProfile._id,
-          postId: post._id,
-          like
-        });
-        setPost({ ...post, likes: res.data.likes });
-      }
-    };
-
 
     const onVideoPress = () => {
       if (playing) {
@@ -191,15 +174,6 @@ import PostDetails from "../pages/detail/[id]";
         </div>
         <div className='mt-2  lg:mt-0 md:text-2xl text-2xl'>
           <div className='flex  ml-0  '>
-         
-           {userProfile &&  <LikeButton
-                  likes={post.likes}
-                  flex='flex'
-                  handleLike={() => handleLike(true)}
-                  handleDislike={() => handleLike(false)}
-                />}
-         
-            
           <AiOutlineStar className='cursor-pointer text-blue-400  md:ml-40'/>&nbsp;
           <p className='text-xs text-gray-500 mt-1'> {likes?.length || 0}</p>
 
