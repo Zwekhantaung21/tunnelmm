@@ -24,6 +24,7 @@
     "react-icons": "^4.4.0",
     "react-scroll-to-top": "^3.0.0",
     "react-spinners": "^0.13.4",
+    "react-youtube": "^10.1.0",
     "uuidv4": "^6.2.13",
     "zustand": "^4.0.0"
   },

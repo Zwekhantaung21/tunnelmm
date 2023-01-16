@@ -13,33 +13,33 @@ import { BiPaperPlane } from 'react-icons/bi';
 import { GiDrippingStar } from 'react-icons/gi';
 
 
-
   interface IProps {
     post: Video;
     isShowingOnHome?: boolean;
   }
 
   const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes, comments }, isShowingOnHome }) => {
-    const [playing, setPlaying] = useState(true);
+    const [playing, setPlaying] = useState(false);
     const [isHover, setIsHover] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
+   
 
-    const onVideoPress = () => {
-      if (playing) {
-        videoRef?.current?.pause();
-        setPlaying(false);
-      } else {
-        videoRef?.current?.play();
-        setPlaying(true);
-      }
-    };
+    // const onVideoPress = () => {
+    //   if (playing) {
+    //     videoRef?.current?.pause();
+    //     setPlaying(false);
+    //   } else {
+    //     videoRef?.current?.play();
+    //     setPlaying(true);
+    //   }
+    // };
 
-    useEffect(() => {
-      if (videoRef?.current) {
-        videoRef.current.muted = isVideoMuted;
-      }
-    }, [isVideoMuted]);
+    // useEffect(() => {
+    //   if (videoRef?.current) {
+    //     videoRef.current.muted = isVideoMuted;
+    //   }
+    // }, [isVideoMuted]);
 
     if(!isShowingOnHome) {
       return (
@@ -122,16 +122,18 @@ import { GiDrippingStar } from 'react-icons/gi';
             onMouseLeave={() => setIsHover(false)}
             className='rounded-3xl lg:rounded'
           >
+            
             <Link href={`/detail/${_id}`}>
             <span className='float-right cursor-pointer text-sm flex text-blue-600'>Detail&nbsp;
             <GoLinkExternal className='mt-1'/> </span>
             </Link>
             <br className='block'/>
+            
               <video
                 muted
-                controls={true}
+                controls
                 preload='auto'
-                
+                autoPlay
                 playsInline
                 ref={videoRef}
                 src={video.asset.url}
@@ -140,36 +142,29 @@ import { GiDrippingStar } from 'react-icons/gi';
               ></video>
             
 
-            {isHover && (
-              <div className='absolute bottom-0 md:bottom-5 cursor-pointer left-0 md:left-14 lg:left-0 flex gap-40 lg:justify-between w-[100px] md:w-[50px] lg:w-[600px] p-3'>
-                {/* {playing ? (
-                  <div className='absolute bottom-[80%] left-[110%] lg:left-[42%] lg:bottom-[210%] cursor-pointer'>
-                  <button onClick={onVideoPress}>
-                    <BsFillPauseFill className='text-blue-600  text-5xl lg:text-7xl ' />
-                  </button>
-                  </div>
-                ) : (
-                  <div className='absolute bottom-[80%] left-[120%] lg:left-[42%] lg:bottom-[210%] cursor-pointer'>
-                  <button onClick={onVideoPress}>
-                    <BsFillPlayFill className='text-blue-600  text-5xl lg:text-7xl' />
-                  </button>
-                  </div>
-                )} */}
-                {/* {isVideoMuted ? (
-                  <div>
-                  <button onClick={() => setIsVideoMuted(false)}>
-                    <HiVolumeOff className='text-blue-600 text-2xl lg:text-1xl' />
-                  </button>
-                  </div>
-                ) : (
-                  <div >
-                  <button onClick={() => setIsVideoMuted(true)}>
-                    <HiVolumeUp className='text-blue-600 text-2xl lg:text-2xl' />
-                  </button>
-                  </div>
-                )} */}
-              </div>
-            )}
+            
+          {/* {isHover && (
+            <div className='absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] lg:w-[600px] p-3'>
+              {playing ? (
+                <button onClick={onVideoPress}>
+                  <BsFillPauseFill className='text-blue-500 text-2xl lg:text-4xl' />
+                </button>
+              ) : (
+                <button onClick={onVideoPress}>
+                  <BsFillPlayFill className='text-blue-500 text-2xl lg:text-4xl' />
+                </button>
+              )}
+              {isVideoMuted ? (
+                <button onClick={() => setIsVideoMuted(false)}>
+                  <HiVolumeOff className='text-blue-500 text-2xl lg:text-4xl' />
+                </button>
+              ) : (
+                <button onClick={() => setIsVideoMuted(true)}>
+                  <HiVolumeUp className='text-blue-500 text-2xl lg:text-4xl' />
+                </button>
+              )}
+            </div>
+          )} */}
           </div>
         </div>
         <div className='mt-2  lg:mt-0 md:text-2xl text-2xl'>
