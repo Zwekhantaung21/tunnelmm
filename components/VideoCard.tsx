@@ -28,7 +28,6 @@ import PostDetails from "../pages/detail/[id]";
     const [playing, setPlaying] = useState(true);
     const [isHover, setIsHover] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
-    const [post, setPost] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
     const { userProfile }: any = useAuthStore();
     const handleLike = async (like: boolean) => {
