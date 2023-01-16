@@ -121,7 +121,7 @@ const Detail = ({ postDetails }: IProps) => {
                 <p className=' text-lg text-black-100'>{post.caption}</p>
               </div>
               <div className='mt-5 px-10'>
-                {userProfile && <LikeButton
+                {userProfile &&  <LikeButton
                   likes={post.likes}
                   flex='flex'
                   handleLike={() => handleLike(true)}
@@ -156,3 +156,5 @@ export const getServerSideProps = async ({
 };
 
 export default Detail;
+// export const  LikeButton = 'handlelike';
+
