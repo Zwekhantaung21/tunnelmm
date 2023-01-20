@@ -10,7 +10,7 @@ export default {
     },
     {
       name: 'video',
-      title: 'Video',
+      title: 'Video or Image',
       type: 'file',
       options: {
         hotspot: true,
