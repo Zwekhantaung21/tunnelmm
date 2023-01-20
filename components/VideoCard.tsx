@@ -12,6 +12,10 @@ import { AiOutlineHeart, AiOutlineShareAlt, AiOutlineStar } from 'react-icons/ai
 import { BiPaperPlane } from 'react-icons/bi';
 import { GiDrippingStar } from 'react-icons/gi';
 
+import { topics } from '../utils/constants';
+import { useRouter } from 'next/router';
+
+
 
   interface IProps {
     post: Video;
@@ -20,10 +24,15 @@ import { GiDrippingStar } from 'react-icons/gi';
 
   const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes, comments }, isShowingOnHome }) => {
     const [playing, setPlaying] = useState(false);
+    
     const [isHover, setIsHover] = useState(false);
     const [isVideoMuted, setIsVideoMuted] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
-   
+    const router = useRouter();
+    const { topic } = router.query;
+    const activeTopicStyle = 'xl:border-2 hover:bg-primary xl:border-[#0055b3] px-3 py-2 rounded xl:rounded-2xl flex items-center gap-2 justify-center cursor-pointer text-[#0055b3]';
+  const topicStyle = 'xl:border-2 hover:bg-primary xl:border-gray-200 px-3 py-2 rounded xl:rounded-2xl flex items-center gap-2 justify-center cursor-pointer text-black';
+
 
     // const onVideoPress = () => {
     //   if (playing) {
@@ -114,6 +123,25 @@ import { GiDrippingStar } from 'react-icons/gi';
              
               </span> */}
               </div>
+            
+                <div>
+                {topics?.map((item) => (
+          <Link href={`/?topic=${item.name}`} key={item.name}>
+            <div className={topic === item.name ? activeTopicStyle : topicStyle}>
+              <span className='font-bold text-2xl xl:text-md hidden xl:flex'>
+                {/* {item.icon} */}
+              </span>
+              <span className={`font-medium text-md  xl:block `}>
+                <span className=''>#</span>{item.name}
+              </span>
+            </div>
+          </Link>
+        ))}
+      
+                
+                </div>
+           
+        
         </div>
 
         <div className='lg:ml-20 flex gap-4 relative'>
@@ -169,13 +197,13 @@ import { GiDrippingStar } from 'react-icons/gi';
         </div>
         <div className='mt-2  lg:mt-0 md:text-2xl text-2xl'>
           <div className='flex  ml-0  '>
-          <AiOutlineStar className='cursor-pointer text-blue-400  md:ml-40'/>&nbsp;
+          <AiOutlineStar className='cursor-pointer text-blue-500  md:ml-40'/>&nbsp;
           <p className='text-xs text-gray-500 mt-1'> {likes?.length || 0}</p>
 
-          <BiPaperPlane className='cursor-pointer  text-blue-400 md:ml-40 ml-20'/>&nbsp;
+          <BiPaperPlane className='cursor-pointer  text-blue-500 md:ml-40 ml-20'/>&nbsp;
           <p className='text-xs text-gray-500 mt-1'> {comments?.length || 0}</p>
 
-          <AiOutlineShareAlt className='cursor-pointer text-blue-400 md:ml-40 ml-20'/>&nbsp;
+          <AiOutlineShareAlt className='cursor-pointer text-blue-500 md:ml-40 ml-20'/>&nbsp;
           <p className='text-xs text-gray-500 mt-1'>0</p>
           </div>
         </div>

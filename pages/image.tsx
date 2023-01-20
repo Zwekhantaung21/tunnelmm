@@ -30,7 +30,7 @@ const Upload = () => {
 
   const uploadVideo = async (e: any) => {
     const selectedFile = e.target.files[0];
-    const fileTypes = ['video/jpeg', 'video/png', 'video/GIF'];
+    const fileTypes = ['image/jpeg', 'image/png', 'image/web'];
 
     // uploading asset to sanity
     if (fileTypes.includes(selectedFile.type)) {
@@ -119,10 +119,7 @@ const Upload = () => {
                       </div>
 
                       <p className='text-gray-400 text-center mt-10 text-sm leading-10'>
-                        MP4,WebM and ogg <br />
-                        720x1280 resolution or higher <br />
-                        Up to 10 minutes <br />
-                        Less than 2 GB
+                     Test
                       </p>
                       <p className='bg-[#006ee6] text-center mt-8 rounded text-white text-md font-medium p-2 w-52 outline-none'>
                         Select file
@@ -137,10 +134,10 @@ const Upload = () => {
                   </label>
                 ) : (
                   <div className=' rounded-3xl w-[300px]  p-4 flex flex-col gap-6 justify-center items-center'>
-                    <video
+                    <img
                       className='rounded-xl h-[462px] mt-16 bg-black'
-                      controls
-                      loop
+                     
+                   
                       src={videoAsset?.url}
                     />
                     <div className=' flex justify-between gap-20'>
