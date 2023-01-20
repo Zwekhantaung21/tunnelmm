@@ -123,25 +123,7 @@ const topicStyle = 'xl:border-2 hover:bg-primary xl:border-gray-200 px-3 py-2 ro
            
             </span> */}
             </div>
-          
-              <div>
-              {topics?.map((item) => (
-        <Link href={`/?topic=${item.name}`} key={item.name}>
-          <div className={topic === item.name ? activeTopicStyle : topicStyle}>
-            <span className='font-bold text-2xl xl:text-md hidden xl:flex'>
-              {/* {item.icon} */}
-            </span>
-            <span className={`font-medium text-md  xl:block `}>
-              <span className=''>#</span>{item.name}
-            </span>
-          </div>
-        </Link>
-      ))}
-    
-              
-              </div>
          
-      
       </div>
 
       <div className='lg:ml-20 flex gap-4 relative'>

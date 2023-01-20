@@ -7,6 +7,7 @@ import Sidebar from '../components/Sidebar';
 import '../styles/globals.css';
 import Topbutton from "../components/scroll";
 import Link from 'next/link';
+import Marquee from 'react-fast-marquee';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [isSSR, setIsSSR] = useState(true);
@@ -30,12 +31,16 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <div className='h-[92vh] overflow-auto xl:overflow-hidden xl:hover:overflow-auto'>
             <Sidebar />
           </div>
-          
+          <Marquee className=''>
+            <span className='text-red-500 text-lg'>
+            Tunnel is now in Testin Stage!
+            </span>
+          </Marquee>
           <div className='mt-4 mr-4 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1'>
             <div className='scroll'>
             <Component {...pageProps} />
             <Topbutton/>
-
+          
             {/* <div data-dial-init className="fixed bottom-6 right-24 group">
             <Link href='/upload'>    
     <button  type="button" data-dial-toggle="speed-dial-menu-dropdown-alternative" aria-controls="speed-dial-menu-dropdown-alternative" aria-expanded="false" className="flex items-center justify-center ml-auto text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800">
