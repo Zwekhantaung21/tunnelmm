@@ -1,9 +1,13 @@
 export interface Video {
     caption: string;
+    isVideo: boolean; // add this property
+    isImage: boolean; // add this property
+    type: string;
     video: {
       asset: {
         _id: string;
         url: string;
+        type: VideoType;
       };
     };
     _id: string;

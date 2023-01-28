@@ -376,6 +376,21 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-native-video@^5.0.14":
+  "integrity" "sha512-KdcyY4HY/Q1l6f5qQA337BNVN+GsdZy836j9CXbWHZ008VVNzSlnJypJQPsnUgI0EPBw/uG/lyJk6cg9Jj1syg=="
+  "resolved" "https://registry.npmjs.org/@types/react-native-video/-/react-native-video-5.0.14.tgz"
+  "version" "5.0.14"
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+
+"@types/react-native@*":
+  "integrity" "sha512-P9wTeYq7M3azvdHmubbIS85X3jiWvGhl4nqSDUAT47JRUJeM4EmoosSy1rKcDgq7fjUVIIDqVEk3qFdupOd0Nw=="
+  "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.71.1.tgz"
+  "version" "0.71.1"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@18.0.17":
   "integrity" "sha512-38ETy4tL+rn4uQQi7mB81G7V1g0u2ryquNmsVIOKUAEIDK+3CUjZ6rSRpdvS99dNBnkLFL83qfmtLacGOTIhwQ=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.17.tgz"
@@ -394,6 +409,13 @@
   "integrity" "sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw=="
   "resolved" "https://registry.npmjs.org/@types/uuid/-/uuid-8.3.4.tgz"
   "version" "8.3.4"
+
+"@types/video-react@^0.15.1":
+  "integrity" "sha512-OFndW9sVCX7yTHnt6cGWE88IAVMm6RcS4YN15N+i0o5yYDFQhPc3ChmiyNkQXk6HuBBLQDu6Fyy5FH3Dv/F5IA=="
+  "resolved" "https://registry.npmjs.org/@types/video-react/-/video-react-0.15.1.tgz"
+  "version" "0.15.1"
+  dependencies:
+    "@types/react" "*"
 
 "@typescript-eslint/parser@^5.21.0":
   "integrity" "sha512-cgM5cJrWmrDV2KpvlcSkelTBASAs1mgqq+IUGKJvFxWrapHpaRy5EXPQz9YaKF3nZ8KY18ILTiVpUtbIac86/w=="

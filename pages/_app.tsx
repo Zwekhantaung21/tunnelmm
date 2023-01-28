@@ -31,11 +31,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           <div className='h-[92vh] overflow-auto xl:overflow-hidden xl:hover:overflow-auto'>
             <Sidebar />
           </div>
-          <Marquee className=''>
+          {/* <Marquee className=''>
             <span className='text-red-500 text-lg'>
             Tunnel is now in Testin Stage!
             </span>
-          </Marquee>
+          </Marquee> */}
           <div className='mt-4 mr-4 flex flex-col gap-10 overflow-auto h-[88vh] videos flex-1'>
             <div className='scroll'>
             <Component {...pageProps} />

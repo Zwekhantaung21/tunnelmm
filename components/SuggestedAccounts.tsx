@@ -54,9 +54,9 @@ const SuggestedAccounts: NextPage<IProps> = ({ fetchAllUsers, allUsers }) => {
             </div>
           </Link>
         ))}
-        <Link href={`./image`}>
+        {/* <Link href={`./image`}>
         <span>See more</span>
-        </Link>
+        </Link> */}
        
       </div>
     </div>
