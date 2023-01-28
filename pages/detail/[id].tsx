@@ -142,6 +142,8 @@ const Detail = ({ postDetails }: IProps) => {
     </>
   );
 };
+export {LikeButton};
+
 
 export const getServerSideProps = async ({
   params: { id },

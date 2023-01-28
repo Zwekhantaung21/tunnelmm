@@ -18,6 +18,7 @@ const LikeButton: NextPage<IProps> = ({ likes, flex, handleLike, handleDislike }
   const [alreadyLiked, setAlreadyLiked] = useState(false);
   const { userProfile }: any = useAuthStore();
   let filterLikes = likes?.filter((item: any) => item._ref === userProfile?._id);
+  
 
   useEffect(() => {
     if (filterLikes?.length > 0) {
