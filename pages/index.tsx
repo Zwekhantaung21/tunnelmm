@@ -6,7 +6,7 @@ import ImageCard from '../components/ImageCard';
 import { BASE_URL } from '../utils';
 import { Video } from '../types';
 import NoResults from '../components/NoResults';
-
+import ScrollToTop from '../components/scroll';
 interface IProps {
   videos: Video[];
 }
@@ -20,6 +20,7 @@ const Home = ({ videos }: IProps) => {
          <div>
            <ImageCard post={video} isShowingOnHome key={video._id} /> 
            <VideoCard post={video} isShowingOnHome key={video._id} /> 
+          
          </div>
          
           
@@ -32,8 +33,11 @@ const Home = ({ videos }: IProps) => {
     
     
   );
+ 
+    
+  
 };
-
+<ScrollToTop/>
 export default Home;
 
 export const getServerSideProps = async ({

@@ -3,10 +3,10 @@ import { FaAngleUp } from "react-icons/fa";
 
 
 const ScrollToTop = () => {
-    const [showTopBtn, setShowTopBtn] = useState(false);
+    const [showTopBtn, setShowTopBtn] = useState(true);
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 400) {
+            if (window.scrollY > 40) {
                 setShowTopBtn(true);
             } else {
                 setShowTopBtn(false);

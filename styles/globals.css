@@ -55,13 +55,16 @@ a {
   bottom: 40px;
   right: 25px;
   z-index: 20;
+  display: block;
 }
 .icon-style{
-  background-color: #551B54;
-  border: 2px solid #fff;
+  background-color: #3856c0;
+  border: 1px solid #fff;
   border-radius: 50%;
+  display: block;
   height: 50px;
   width: 50px;
+
   color: #fff;
   cursor: pointer;
   animation: movebtn 3s ease-in-out infinite;
@@ -78,13 +81,13 @@ a {
     transform: translateY(0px);
   }
   25%{
-    transform: translateY(20px);
+    transform: translateY(-5px);
   }
   50%{
-    transform: translateY(0px);
+    transform: translateY(5px);
   }
   75%{
-    transform: translateY(-20px);
+    transform: translateY(0px);
   }
   100%{
     transform: translateY(0px);
