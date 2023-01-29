@@ -88,7 +88,7 @@ const Upload = () => {
   };
 
   return (
-    <div className='flex w-full h-full absolute left-0 top-[60px] lg:top-[70px] mb-10 pt-5 lg:pt-30 bg-[#F8F8F8] justify-center'>
+    <div className='flex w-full h-full absolute left-0 top-[80px] lg:top-[100px] mb-10 pt-5 lg:pt-30 bg-[#F8F8F8] justify-center'>
       <div className=' bg-white rounded-lg xl:h-[90vh] flex gap-6 flex-wrap justify-center items-center p-14 pt-6'>
         <div>
           <div>
@@ -209,6 +209,7 @@ const Upload = () => {
        
             </button>
           </div>
+       
         </div>
       </div>
       
